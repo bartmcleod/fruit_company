@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="fruit_company_test">
+	<table_data name="genus">
+	<row>
+		<field name="id">4</field>
+		<field name="name">Malus</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="name">Nightshades</field>
+	</row>
+	</table_data>
+	<table_data name="species">
+	<row>
+		<field name="id">4</field>
+		<field name="name">Potato</field>
+		<field name="genus_id">3</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="name">Tomato</field>
+		<field name="genus_id">3</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="name">Apple</field>
+		<field name="genus_id">4</field>
+	</row>
+	</table_data>
+	<table_data name="cultivar">
+	<row>
+		<field name="id">11</field>
+		<field name="species_id">4</field>
+		<field name="name">Adirondack Blue</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="species_id">4</field>
+		<field name="name">Adirondack Red</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="species_id">4</field>
+		<field name="name">Agata</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="species_id">4</field>
+		<field name="name">Belana</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="species_id">5</field>
+		<field name="name">Alicante</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">16</field>
+		<field name="species_id">5</field>
+		<field name="name">Beefsteak</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">17</field>
+		<field name="species_id">5</field>
+		<field name="name">Celebrity</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">18</field>
+		<field name="species_id">6</field>
+		<field name="name">Adams Pearmain</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">19</field>
+		<field name="species_id">6</field>
+		<field name="name">Anna</field>
+		<field name="edible">1</field>
+	</row>
+	<row>
+		<field name="id">20</field>
+		<field name="species_id">6</field>
+		<field name="name">Duchess of Oldenburg</field>
+		<field name="edible">1</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
