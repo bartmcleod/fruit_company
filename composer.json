@@ -1,8 +1,8 @@
 {
     "require": {
-        "phpunit/dbunit": "^4.0",
         "zendframework/zend-db": "^2.10",
-        "symfony/console": "^4.3"
+        "symfony/console": "^4.3",
+        "kornrunner/dbunit": "^4.1"
     },
     "autoload": {
         "psr-4": {
