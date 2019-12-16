@@ -27,7 +27,8 @@ class CultivarRepositoryTest extends DbTest
         /** @var Cultivar $cultivar */
         foreach ($nightshades as $cultivar) {
             $count++;
-            $this->assertSame('Nightshades', $cultivar->getSpecies()->getGenus()->getName());
+            $name = $cultivar->getSpecies()->getGenus()->getName();
+            $this->assertSame('Nightshades', $name);
         }
 
         $this->assertSame(7, $count);
@@ -49,7 +50,8 @@ class CultivarRepositoryTest extends DbTest
         /** @var Cultivar $cultivar */
         foreach ($apples as $cultivar) {
             $count++;
-            $this->assertSame('Apple', $cultivar->getSpecies()->getName());
+            $name = $cultivar->getSpecies()->getName();
+            $this->assertSame('Apple', $name);
         }
 
         $this->assertSame(3, $count);
