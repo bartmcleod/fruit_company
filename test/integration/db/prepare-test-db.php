@@ -4,17 +4,20 @@ use FruitCompany\Config;
 
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
-$dbParams = Config::get()['db'];
-$params = array_map('escapeshellarg', $dbParams);
+$params = Config::get()['db'];
 
 $structure = __DIR__ . '/structure.sql';
 
 // dump structure from application database
 $command = "mysqldump -h {$params['host']} -u {$params['username']} -p{$params['password']}" .
-    " --port={$params['port']} -t --no-data {$params['database']} > $structure";
+    " --port={$params['port']} --no-data {$params['database']} > $structure";
+
+$output = shell_exec($command);
 
 // load structure into test database
 $command = "mysql -h {$params['host']} -u {$params['username']} -p{$params['password']}" .
-    " --port={$params['port']} -t --xml {$params['database']}_test < $structure";
+    " --port={$params['port']} {$params['database']}_test < $structure";
 
-$output = shell_exec($command);
+$output .= shell_exec($command);
+
+echo $output;
