@@ -16,7 +16,7 @@ services:
     volumes:
       - .:/usr/src/fruits
     environment:
-      - "XDEBUG_CONFIG:remote_host=docker.for.mac.localhost"
+      - "XDEBUG_CONFIG:client_host=docker.for.mac.localhost"
       - "PHP_IDE_CONFIG:serverName=FruitCompany"
 
 

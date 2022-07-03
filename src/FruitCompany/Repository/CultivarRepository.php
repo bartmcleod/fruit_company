@@ -10,9 +10,9 @@ use FruitCompany\Model\Cultivar;
 use FruitCompany\Model\Genus;
 use FruitCompany\Model\Species;
 use Generator;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\Sql\Select;
-use Zend\Db\TableGateway\AbstractTableGateway;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Sql\Select;
+use Laminas\Db\TableGateway\AbstractTableGateway;
 
 class CultivarRepository extends AbstractTableGateway
 {
@@ -65,8 +65,8 @@ class CultivarRepository extends AbstractTableGateway
     {
         $select = (new Select(['c' => $this->table]))
             ->columns([Select::SQL_STAR])
-            ->join(['s' => 'species'], 'c.species_id = s.id', ['species_name' => 'name'], Select::JOIN_LEFT)
-            ->join(['g' => 'genus'], 's.genus_id = g.id', ['genus_name' => 'name'], Select::JOIN_LEFT);
+            ->join(['s' => 'species'], 'c.species_id = s.id', ['species_id' => 'id', 'species_name' => 'name'], Select::JOIN_LEFT)
+            ->join(['g' => 'genus'], 's.genus_id = g.id', ['genus_id' => 'id', 'genus_name' => 'name'], Select::JOIN_LEFT);
         return $select;
     }
 

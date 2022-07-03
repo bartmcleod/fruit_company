@@ -10,9 +10,9 @@ use PHPUnit\DbUnit\Database\DefaultConnection;
 use PHPUnit\DbUnit\Operation\Factory;
 use PHPUnit\DbUnit\Operation\Operation;
 use PHPUnit\DbUnit\TestCase;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\Adapter\Driver\Pdo\Pdo as PdoDriver;
-use Zend\Db\Adapter\Platform\Mysql;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Pdo as PdoDriver;
+use Laminas\Db\Adapter\Platform\Mysql;
 
 abstract class DbTest extends TestCase
 {

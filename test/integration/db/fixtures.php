@@ -9,9 +9,9 @@ use FruitCompanyTest\Repository\CultivarRepositoryTest\CultivarRepositoryFixture
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\Adapter\Driver\Pdo\Pdo as PdoDriver;
-use Zend\Db\Adapter\Platform\Mysql;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Pdo as PdoDriver;
+use Laminas\Db\Adapter\Platform\Mysql;
 
 require_once __DIR__ . '/../../../vendor/autoload.php';
 

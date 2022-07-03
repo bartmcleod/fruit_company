@@ -1,8 +1,9 @@
 {
     "require": {
-        "zendframework/zend-db": "^2.10",
-        "symfony/console": "^4.3",
-        "kornrunner/dbunit": "^4.1"
+        "laminas/laminas-db": "^2.1",
+        "symfony/console": "^6.0",
+        "kornrunner/dbunit": "^6.0",
+        "ext-pdo": "*"
     },
     "autoload": {
         "psr-4": {

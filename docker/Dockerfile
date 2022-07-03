@@ -1,8 +1,9 @@
-FROM php:7.3-cli
+FROM php:8.1.7-fpm
 RUN apt-get update \
-    && apt-get install -y mariadb-client \
+    && apt-get install -y mariadb-client iputils-ping \
     && docker-php-ext-install -j$(nproc) pdo_mysql
-RUN pecl install xdebug-2.7.0 \
+RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 WORKDIR /usr/src/fruits
 CMD [ "php", "./docker/docker.php" ]
+

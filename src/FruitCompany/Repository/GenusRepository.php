@@ -8,9 +8,9 @@ use FruitCompany\DataTransferObject\SpeciesData;
 use FruitCompany\Model\Genus;
 use FruitCompany\Model\Species;
 use Generator;
-use Zend\Db\Adapter\Adapter;
-use Zend\Db\Sql\Select;
-use Zend\Db\TableGateway\AbstractTableGateway;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Sql\Select;
+use Laminas\Db\TableGateway\AbstractTableGateway;
 
 class GenusRepository extends AbstractTableGateway
 {
