@@ -58,9 +58,6 @@ class CultivarRepository extends AbstractTableGateway
         return $this->getCultivars($select);
     }
 
-    /**
-     * @return Select
-     */
     private function getSelect(): Select
     {
         $select = (new Select(['c' => $this->table]))
@@ -70,10 +67,6 @@ class CultivarRepository extends AbstractTableGateway
         return $select;
     }
 
-    /**
-     * @param Select $select
-     * @return Generator
-     */
     private function getCultivars(Select $select): Generator
     {
         foreach ($this->selectWith($select) as $row) {

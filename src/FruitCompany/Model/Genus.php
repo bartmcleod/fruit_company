@@ -7,20 +7,11 @@ use FruitCompany\DataTransferObject\GenusData;
 
 final class Genus implements Model
 {
-    /**
-     * @var int
-     */
-    private $id;
-
-    /**
-     * @var string
-     */
-    private $name;
+    private ?int $id = null;
 
     public function __construct(
-        string $name
+        private readonly string $name
     ) {
-        $this->name = $name;
     }
 
     public static function load(GenusData $data): Genus
@@ -31,9 +22,6 @@ final class Genus implements Model
         return $genus;
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
@@ -41,25 +29,17 @@ final class Genus implements Model
 
     /**
      * Return true if the object has not been saved
-     * @return bool
      */
     public function isNew(): bool
     {
         return is_null($this->id);
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param int $id
-     * @return Genus
-     */
     public function withId(int $id): Genus
     {
         $genus = clone $this;

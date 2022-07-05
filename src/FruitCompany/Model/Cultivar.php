@@ -7,39 +7,15 @@ use FruitCompany\DataTransferObject\CultivarData;
 
 final class Cultivar implements Model
 {
-    /**
-     * @var int
-     */
-    private $id;
-
-    /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var Species
-     */
-    private $species;
-
-    /**
-     * @var bool
-     */
-    private $edible;
+    private ?int $id = null;
 
     public function __construct(
-        string $name,
-        Species $species,
-        bool $edible
+        private readonly string $name,
+        private readonly Species $species,
+        private readonly bool $edible
     ) {
-        $this->name = $name;
-        $this->species = $species;
-        $this->edible = $edible;
     }
 
-    /**
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
@@ -47,41 +23,27 @@ final class Cultivar implements Model
 
     /**
      * Return true if the object has not been saved
-     * @return bool
      */
     public function isNew(): bool
     {
         return is_null($this->id);
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return Species
-     */
     public function getSpecies(): Species
     {
         return $this->species;
     }
 
-    /**
-     * @return bool
-     */
     public function isEdible(): bool
     {
         return $this->edible;
     }
 
-    /**
-     * @param CultivarData $data
-     * @return Cultivar
-     */
     public static function load(CultivarData $data): Cultivar
     {
         $cultivar = new Cultivar($data->name, $data->species, $data->edible);
@@ -90,10 +52,6 @@ final class Cultivar implements Model
         return $cultivar;
     }
 
-    /**
-     * @param int $id
-     * @return Cultivar
-     */
     public function withId(int $id): Cultivar
     {
         $cultivar = clone $this;

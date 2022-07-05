@@ -46,9 +46,6 @@ class GenusRepository extends AbstractTableGateway
         return $this->getSpecies($select);
     }
 
-    /**
-     * @return Select
-     */
     private function getSelect(): Select
     {
         $select = (new Select(['s' => $this->table]))
@@ -57,10 +54,6 @@ class GenusRepository extends AbstractTableGateway
         return $select;
     }
 
-    /**
-     * @param Select $select
-     * @return Generator
-     */
     private function getSpecies(Select $select): Generator
     {
         foreach ($this->selectWith($select) as $row) {

@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace FruitCompany\Model;
 
-
 use FruitCompany\DataTransferObject\SpeciesData;
 
 final class Species implements Model
@@ -13,22 +12,10 @@ final class Species implements Model
      */
     private $id;
 
-    /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var Genus
-     */
-    private $genus;
-
     public function __construct(
-        string $name,
-        Genus $genus
+        private readonly string $name,
+        private readonly Genus $genus
     ) {
-        $this->name = $name;
-        $this->genus = $genus;
     }
 
     /**
@@ -41,33 +28,22 @@ final class Species implements Model
 
     /**
      * Return true if the object has not been saved
-     * @return bool
      */
     public function isNew(): bool
     {
         return is_null($this->id);
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return Genus
-     */
     public function getGenus(): Genus
     {
         return $this->genus;
     }
 
-    /**
-     * @param SpeciesData $data
-     * @return Species
-     */
     public static function load(SpeciesData $data): Species
     {
         $species = new Species($data->name, $data->genus);

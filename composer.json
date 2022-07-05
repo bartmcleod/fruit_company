@@ -3,7 +3,8 @@
         "laminas/laminas-db": "^2.1",
         "symfony/console": "^6.0",
         "kornrunner/dbunit": "^6.0",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "rector/rector": "^0.13.7"
     },
     "autoload": {
         "psr-4": {
