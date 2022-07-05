@@ -4,10 +4,10 @@ FROM composer
 FROM php:8.1.7-fpm
 
 RUN apt-get update \
-    && apt-get install -y mariadb-client iputils-ping unzip icu-devtools \
+    && apt-get install -y mariadb-client iputils-ping unzip vim \
     && docker-php-ext-install -j$(nproc) pdo_mysql
 
-RUN pecl install xdebug intl \
+RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 # copy composer executable from first stage
